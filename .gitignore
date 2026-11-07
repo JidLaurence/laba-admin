@@ -1,0 +1,16 @@
+node_modules/
+dist/
+.expo/
+.env*
+!.env.example
+coverage/
+*.log
+*.tgz
+*.laba
+*.pem
+*.key
+*.p12
+.local/
+.openai/
+apps/mobile/android/
+apps/mobile/ios/

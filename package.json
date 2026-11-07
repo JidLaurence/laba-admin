@@ -1,0 +1,25 @@
+{
+  "name": "laba-admin",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "apps/admin"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w @laba/admin",
+    "build": "npm run build -w @laba/admin",
+    "typecheck": "npm run typecheck --workspaces --if-present"
+  },
+  "overrides": {
+    "postcss": "^8.5.32",
+    "image-size": "^2.1.0",
+    "glob@>=9": "^14.0.4",
+    "minimatch@>=7": "^11.0.5",
+    "esbuild@>=0.27.3 <0.28.1": "^0.28.2"
+  },
+  "devDependencies": {
+    "typescript": "~5.9.2",
+    "@types/node": "^22.19.0"
+  }
+}
