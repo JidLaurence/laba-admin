@@ -211,7 +211,7 @@ export default function App() {
   const visible = stores.filter(
     (s) =>
       (filter === "All stores" || status(s) === filter || (filter === "Active" && status(s) === "Expiring soon")) &&
-      `${s.name} ${s.ownerName} ${s.email}`
+      `${s.id} ${s.name} ${s.ownerName} ${s.email}`
         .toLowerCase()
         .includes(query.toLowerCase()),
   );
@@ -564,7 +564,7 @@ export default function App() {
                     <Search size={16} />
                     <input
                       aria-label="Search stores"
-                      placeholder="Search stores or owners…"
+                      placeholder="Search stores, shop codes or owners…"
                       value={query}
                       onChange={(e) => setQuery(e.target.value)}
                     />
@@ -600,8 +600,8 @@ export default function App() {
                             </div>
                           </td>
                           <td>
-                            <b className="owner-name">{store.ownerName}</b>
-                            <small>{store.email}</small>
+                            <b className="owner-name">{store.ownerName || 'Users stored on phone'}</b>
+                            <small>{store.email || `Shop code: ${store.id}`}</small>
                           </td>
                           <td>
                             <span
